@@ -37,11 +37,9 @@ class CPU_check():
         dbconn.commit()
 
 
-timer = 3600
-while timer > 0:
+while True:
     CPUperfivesec = psutil.cpu_percent(interval=5)
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
     new_stats = CPU_check(CPUperfivesec, current_time)
     new_stats.write_in_db()
-    timer -= 5

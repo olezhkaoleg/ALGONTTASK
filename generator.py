@@ -16,7 +16,7 @@ def load_data():
         pass
     cursor = db.cursor()
 
-    sql = "SELECT CPU.CPU_percent, CPU.Current_time FROM CPU ORDER BY CPU.Current_time DESC LIMIT 10"
+    sql = "SELECT CPU.CPU_percent, CPU.Current_time FROM CPU ORDER BY CPU.Current_time DESC LIMIT 720"
     cursor.execute(sql)
     data = cursor.fetchall()
     print(data)
